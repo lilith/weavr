@@ -1,0 +1,6 @@
+.authform
+  = form_for(@user) do |f|
+    .form-group
+      = f.label :email
+      = f.email_field :email, class: 'form-control'
+    = f.submit 'Sign in', :class => 'button right'
