@@ -69,6 +69,6 @@ class IncarnationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def incarnation_params
-      params.require(:incarnation).permit(:profile_id, :type, :title, :name, :gender, :other_gender, :gold, :gems, :hitpoints, :max_hitpoints, :mana, :max_mana, :experience, :level, :turns, :location_id, :coroutine, :display)
+      params.require(:incarnation).permit(:profile_id, :kind, :title, :name, :gender, :other_gender, :gold, :gems, :hitpoints, :max_hitpoints, :mana, :max_mana, :experience, :level, :turns, :location_id, :coroutine, :display)
     end
 end

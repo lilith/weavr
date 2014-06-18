@@ -4,7 +4,7 @@ table
   thead
     tr
       th Profile
-      th Type
+      th Kind
       th Title
       th Name
       th Gender
@@ -29,7 +29,7 @@ table
     - @incarnations.each do |incarnation|
       tr
         td = incarnation.profile
-        td = incarnation.type
+        td = incarnation.kind
         td = incarnation.title
         td = incarnation.name
         td = incarnation.gender
