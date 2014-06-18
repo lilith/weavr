@@ -17,6 +17,7 @@ gem 'pg'
 gem 'pundit'
 gem 'simple_form'
 gem 'slim-rails'
+gem 'rufus-lua'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]

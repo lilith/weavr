@@ -74,6 +74,7 @@ GEM
     execjs (2.2.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    ffi (1.9.3)
     hashie (2.1.2)
     hike (1.2.3)
     hub (1.12.0)
@@ -153,6 +154,8 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    rufus-lua (1.1.0)
+      ffi
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -233,6 +236,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.1.1)
   rails_layout
+  rufus-lua
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simple_form
