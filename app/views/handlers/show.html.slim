@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Mod:
+  = @handler.mod
+p
+  strong Hook:
+  = @handler.hook
+p
+  strong Code:
+  = @handler.code
+p
+  strong Priority:
+  = @handler.priority
+
+= link_to 'Edit', edit_handler_path(@handler)
+'|
+= link_to 'Back', handlers_path

@@ -1,0 +1,27 @@
+h1 Listing handlers
+
+table
+  thead
+    tr
+      th Mod
+      th Hook
+      th Code
+      th Priority
+      th
+      th
+      th
+
+  tbody
+    - @handlers.each do |handler|
+      tr
+        td = handler.mod
+        td = handler.hook
+        td = handler.code
+        td = handler.priority
+        td = link_to 'Show', handler
+        td = link_to 'Edit', edit_handler_path(handler)
+        td = link_to 'Destroy', handler, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Handler', new_handler_path

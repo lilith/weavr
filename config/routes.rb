@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :handlers
+
   resources :hooks
 
   resources :extra_choices
