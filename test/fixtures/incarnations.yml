@@ -2,7 +2,7 @@
 
 one:
   profile_id: 
-  type: 
+  kind: 
   title: MyString
   name: MyString
   gender: MyString
@@ -22,7 +22,7 @@ one:
 
 two:
   profile_id: 
-  type: 
+  kind: 
   title: MyString
   name: MyString
   gender: MyString

@@ -4,10 +4,10 @@ one:
   mod_id: 
   location_id: 
   name: MyString
-  type: 
+  kind: 
 
 two:
   mod_id: 
   location_id: 
   name: MyString
-  type: 
+  kind: 

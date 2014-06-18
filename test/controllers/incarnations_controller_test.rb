@@ -18,7 +18,7 @@ class IncarnationsControllerTest < ActionController::TestCase
 
   test "should create incarnation" do
     assert_difference('Incarnation.count') do
-      post :create, incarnation: { coroutine: @incarnation.coroutine, display: @incarnation.display, experience: @incarnation.experience, gems: @incarnation.gems, gender: @incarnation.gender, gold: @incarnation.gold, hitpoints: @incarnation.hitpoints, level: @incarnation.level, location_id: @incarnation.location_id, mana: @incarnation.mana, max_hitpoints: @incarnation.max_hitpoints, max_mana: @incarnation.max_mana, name: @incarnation.name, other_gender: @incarnation.other_gender, profile_id: @incarnation.profile_id, title: @incarnation.title, turns: @incarnation.turns, type: @incarnation.type }
+      post :create, incarnation: { coroutine: @incarnation.coroutine, display: @incarnation.display, experience: @incarnation.experience, gems: @incarnation.gems, gender: @incarnation.gender, gold: @incarnation.gold, hitpoints: @incarnation.hitpoints, level: @incarnation.level, location_id: @incarnation.location_id, mana: @incarnation.mana, max_hitpoints: @incarnation.max_hitpoints, max_mana: @incarnation.max_mana, name: @incarnation.name, other_gender: @incarnation.other_gender, profile_id: @incarnation.profile_id, title: @incarnation.title, turns: @incarnation.turns, kind: @incarnation.kind }
     end
 
     assert_redirected_to incarnation_path(assigns(:incarnation))
@@ -35,7 +35,7 @@ class IncarnationsControllerTest < ActionController::TestCase
   end
 
   test "should update incarnation" do
-    patch :update, id: @incarnation, incarnation: { coroutine: @incarnation.coroutine, display: @incarnation.display, experience: @incarnation.experience, gems: @incarnation.gems, gender: @incarnation.gender, gold: @incarnation.gold, hitpoints: @incarnation.hitpoints, level: @incarnation.level, location_id: @incarnation.location_id, mana: @incarnation.mana, max_hitpoints: @incarnation.max_hitpoints, max_mana: @incarnation.max_mana, name: @incarnation.name, other_gender: @incarnation.other_gender, profile_id: @incarnation.profile_id, title: @incarnation.title, turns: @incarnation.turns, type: @incarnation.type }
+    patch :update, id: @incarnation, incarnation: { coroutine: @incarnation.coroutine, display: @incarnation.display, experience: @incarnation.experience, gems: @incarnation.gems, gender: @incarnation.gender, gold: @incarnation.gold, hitpoints: @incarnation.hitpoints, level: @incarnation.level, location_id: @incarnation.location_id, mana: @incarnation.mana, max_hitpoints: @incarnation.max_hitpoints, max_mana: @incarnation.max_mana, name: @incarnation.name, other_gender: @incarnation.other_gender, profile_id: @incarnation.profile_id, title: @incarnation.title, turns: @incarnation.turns, kind: @incarnation.kind }
     assert_redirected_to incarnation_path(assigns(:incarnation))
   end
 

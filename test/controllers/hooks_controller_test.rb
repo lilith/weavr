@@ -18,7 +18,7 @@ class HooksControllerTest < ActionController::TestCase
 
   test "should create hook" do
     assert_difference('Hook.count') do
-      post :create, hook: { location_id: @hook.location_id, mod_id: @hook.mod_id, name: @hook.name, type: @hook.type }
+      post :create, hook: { location_id: @hook.location_id, mod_id: @hook.mod_id, name: @hook.name, kind: @hook.kind }
     end
 
     assert_redirected_to hook_path(assigns(:hook))
@@ -35,7 +35,7 @@ class HooksControllerTest < ActionController::TestCase
   end
 
   test "should update hook" do
-    patch :update, id: @hook, hook: { location_id: @hook.location_id, mod_id: @hook.mod_id, name: @hook.name, type: @hook.type }
+    patch :update, id: @hook, hook: { location_id: @hook.location_id, mod_id: @hook.mod_id, name: @hook.name, kind: @hook.kind }
     assert_redirected_to hook_path(assigns(:hook))
   end
 
