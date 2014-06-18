@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong User:
+  = @profile.user
+p
+  strong Name:
+  = @profile.name
+
+= link_to 'Edit', edit_profile_path(@profile)
+'|
+= link_to 'Back', profiles_path
