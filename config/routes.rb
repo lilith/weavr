@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'play/index'
+
+  get 'play/update'
+
   resources :handlers
 
   resources :hooks
