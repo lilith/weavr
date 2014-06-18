@@ -69,6 +69,6 @@ class HooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hook_params
-      params.require(:hook).permit(:mod_id, :location_id, :name, :type)
+      params.require(:hook).permit(:mod_id, :location_id, :name, :kind)
     end
 end
