@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :mods
+
   resources :incarnations
 
   resources :profiles

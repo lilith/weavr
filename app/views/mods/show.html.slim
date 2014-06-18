@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Pid:
+  = @mod.pid
+p
+  strong Parent:
+  = @mod.parent
+p
+  strong Name:
+  = @mod.name
+p
+  strong Title:
+  = @mod.title
+p
+  strong Description:
+  = @mod.description
+p
+  strong Creator:
+  = @mod.creator
+
+= link_to 'Edit', edit_mod_path(@mod)
+'|
+= link_to 'Back', mods_path

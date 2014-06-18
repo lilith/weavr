@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pid: 
+  parent_id: 
+  name: MyString
+  title: MyText
+  description: MyText
+  creator_id: 
+
+two:
+  pid: 
+  parent_id: 
+  name: MyString
+  title: MyText
+  description: MyText
+  creator_id: 

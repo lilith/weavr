@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618095720) do
+ActiveRecord::Schema.define(version: 20140618100048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,20 @@ ActiveRecord::Schema.define(version: 20140618095720) do
 
   add_index "incarnations", ["location_id"], name: "index_incarnations_on_location_id", using: :btree
   add_index "incarnations", ["profile_id"], name: "index_incarnations_on_profile_id", using: :btree
+
+  create_table "mods", force: true do |t|
+    t.uuid     "pid"
+    t.integer  "parent_id"
+    t.string   "name"
+    t.text     "title"
+    t.text     "description"
+    t.integer  "creator_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "mods", ["creator_id"], name: "index_mods_on_creator_id", using: :btree
+  add_index "mods", ["parent_id"], name: "index_mods_on_parent_id", using: :btree
 
   create_table "profiles", force: true do |t|
     t.integer  "user_id"
