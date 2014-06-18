@@ -1,0 +1,29 @@
+h1 Listing extra_choices
+
+table
+  thead
+    tr
+      th Mod
+      th Title
+      th Choice location
+      th Destination
+      th Priority
+      th
+      th
+      th
+
+  tbody
+    - @extra_choices.each do |extra_choice|
+      tr
+        td = extra_choice.mod
+        td = extra_choice.title
+        td = extra_choice.choice_location
+        td = extra_choice.destination
+        td = extra_choice.priority
+        td = link_to 'Show', extra_choice
+        td = link_to 'Edit', edit_extra_choice_path(extra_choice)
+        td = link_to 'Destroy', extra_choice, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Extra choice', new_extra_choice_path

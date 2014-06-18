@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Mod:
+  = @extra_choice.mod
+p
+  strong Title:
+  = @extra_choice.title
+p
+  strong Choice location:
+  = @extra_choice.choice_location
+p
+  strong Destination:
+  = @extra_choice.destination
+p
+  strong Priority:
+  = @extra_choice.priority
+
+= link_to 'Edit', edit_extra_choice_path(@extra_choice)
+'|
+= link_to 'Back', extra_choices_path

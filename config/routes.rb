@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :extra_choices
+
   resources :locations
 
   resources :mods

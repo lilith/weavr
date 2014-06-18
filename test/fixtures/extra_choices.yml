@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mod_id: 
+  title: MyString
+  choice_location_id: 
+  destination_id: 
+  priority: 1.5
+
+two:
+  mod_id: 
+  title: MyString
+  choice_location_id: 
+  destination_id: 
+  priority: 1.5

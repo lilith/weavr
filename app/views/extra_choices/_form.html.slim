@@ -1,0 +1,12 @@
+= simple_form_for(@extra_choice) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :mod
+    = f.input :title
+    = f.association :choice_location
+    = f.association :destination
+    = f.input :priority
+
+  .form-actions
+    = f.button :submit
