@@ -66,19 +66,25 @@ Location
 - choices_expandable
 - code
 
-rails generate scaffold ExtraChoices mod:belongs_to title:string choice_location:belongs_to  destination:belongs_to
+rails generate scaffold ExtraChoices mod:belongs_to title:string choice_location:belongs_to  destination:belongs_to priority:float
 
 ExtraChoices
 - mod
 - from_location
 - to_location
 - title
+- priority:float
+
+rails generate scaffold Hooks mod:belongs_to location:references  name:string type:string 
+
 
 Hooks
 - mod
 - location
 - name
 - type (beforeload, afterload, event)
+
+rails generate scaffold Hooks mod:belongs_to location:references  name:string type:string
 
 Handlers
 - mod

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618111801) do
+ActiveRecord::Schema.define(version: 20140618112118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,18 @@ ActiveRecord::Schema.define(version: 20140618111801) do
   add_index "extra_choices", ["choice_location_id"], name: "index_extra_choices_on_choice_location_id", using: :btree
   add_index "extra_choices", ["destination_id"], name: "index_extra_choices_on_destination_id", using: :btree
   add_index "extra_choices", ["mod_id"], name: "index_extra_choices_on_mod_id", using: :btree
+
+  create_table "hooks", force: true do |t|
+    t.integer  "mod_id"
+    t.integer  "location_id"
+    t.string   "name"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "hooks", ["location_id"], name: "index_hooks_on_location_id", using: :btree
+  add_index "hooks", ["mod_id"], name: "index_hooks_on_mod_id", using: :btree
 
   create_table "incarnations", force: true do |t|
     t.integer  "profile_id"

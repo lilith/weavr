@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Mod:
+  = @hook.mod
+p
+  strong Location:
+  = @hook.location
+p
+  strong Name:
+  = @hook.name
+p
+  strong Type:
+  = @hook.type
+
+= link_to 'Edit', edit_hook_path(@hook)
+'|
+= link_to 'Back', hooks_path

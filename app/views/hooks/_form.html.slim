@@ -1,0 +1,11 @@
+= simple_form_for(@hook) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :mod
+    = f.association :location
+    = f.input :name
+    = f.input :type
+
+  .form-actions
+    = f.button :submit

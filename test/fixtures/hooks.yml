@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mod_id: 
+  location_id: 
+  name: MyString
+  type: 
+
+two:
+  mod_id: 
+  location_id: 
+  name: MyString
+  type: 
