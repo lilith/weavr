@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mod_id: 
+  name: MyString
+  title: MyText
+  text: MyText
+  choices: MyText
+  choices_expandable: false
+  code: MyText
+
+two:
+  mod_id: 
+  name: MyString
+  title: MyText
+  text: MyText
+  choices: MyText
+  choices_expandable: false
+  code: MyText

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618100250) do
+ActiveRecord::Schema.define(version: 20140618111021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,20 @@ ActiveRecord::Schema.define(version: 20140618100250) do
 
   add_index "incarnations", ["location_id"], name: "index_incarnations_on_location_id", using: :btree
   add_index "incarnations", ["profile_id"], name: "index_incarnations_on_profile_id", using: :btree
+
+  create_table "locations", force: true do |t|
+    t.integer  "mod_id"
+    t.string   "name"
+    t.text     "title"
+    t.text     "text"
+    t.text     "choices"
+    t.boolean  "choices_expandable"
+    t.text     "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "locations", ["mod_id"], name: "index_locations_on_mod_id", using: :btree
 
   create_table "mods", force: true do |t|
     t.uuid     "pid"

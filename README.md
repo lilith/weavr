@@ -7,6 +7,17 @@ Profile
 - Name
 - Incarnations
 
+rails generate migration add_birth_date_to_user birthdate:date
+
+
+rails generate scaffold Profile user:belongs_to name:string 
+rails generate migration add_pid_to_profile pid:uuid
+
+
+rails generate scaffold Incarnation profile:belongs_to type:string title:string name:string gender:string other_gender:string gold:integer gems:integer hitpoints:integer max_hitpoints:integer mana:integer max_mana:integer experience:integer level:integer turns:integer location:references coroutine:binary display:text
+
+
+
 Incarnation
 - type
 - Profile
@@ -27,6 +38,56 @@ Incarnation
 - Coroutine
 - Display
 
+rails generate scaffold Mod pid:uuid parent:belongs_to name:string title:text description:text creator:references
+
+
+
+Mod
+- pid
+- name
+- title
+- description
+- parent (module)
+- creator (profile)
+
+- locations
+- hooks
+- handlers
+
+rails generate scaffold Location mod:belongs_to name:string title:text text:text choices:text choices_expandable:boolean code:text 
+
+
+Location
+- mod
+- name
+- title
+- text
+- choices
+- choices_expandable
+- code
+
+rails generate scaffold ExtraChoices mod:belongs_to title:string choice_location:belongs_to  destination:belongs_to
+
+ExtraChoices
+- mod
+- from_location
+- to_location
+- title
+
+Hooks
+- mod
+- location
+- name
+- type (beforeload, afterload, event)
+
+Handlers
+- mod
+- hook
+- code
+- priority
+
+
+
 
 Dwelling
 - owner(profile)
@@ -39,41 +100,10 @@ DwellingKeys
 - user
 
 
-Module
-- pid
-- name
-- title
-- description
-- parent (module)
-- creator (profile)
-- locations
-- hooks
-- handlers
-- dependencies
-
 
 ModulePreferences
 - module
 - prefs
-
-Location
-- module
-- hooks
-- text
-- code
-- choices
-
-Hooks
-- type (choice, beforeload, afterload, event)
-- name
-- module
-
-Handlers
-- module
-- hook
-- code
-- location
-- priority
 
 We later hash every version of a serialized module to implement versioning.
 
