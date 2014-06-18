@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'select_profile/index'
+
+  get 'select_profile/update'
+
   get 'play/index'
 
   get 'play/update'
