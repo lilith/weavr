@@ -1,0 +1,60 @@
+p#notice = notice
+
+p
+  strong Profile:
+  = @incarnation.profile
+p
+  strong Type:
+  = @incarnation.type
+p
+  strong Title:
+  = @incarnation.title
+p
+  strong Name:
+  = @incarnation.name
+p
+  strong Gender:
+  = @incarnation.gender
+p
+  strong Other gender:
+  = @incarnation.other_gender
+p
+  strong Gold:
+  = @incarnation.gold
+p
+  strong Gems:
+  = @incarnation.gems
+p
+  strong Hitpoints:
+  = @incarnation.hitpoints
+p
+  strong Max hitpoints:
+  = @incarnation.max_hitpoints
+p
+  strong Mana:
+  = @incarnation.mana
+p
+  strong Max mana:
+  = @incarnation.max_mana
+p
+  strong Experience:
+  = @incarnation.experience
+p
+  strong Level:
+  = @incarnation.level
+p
+  strong Turns:
+  = @incarnation.turns
+p
+  strong Location:
+  = @incarnation.location
+p
+  strong Coroutine:
+  = @incarnation.coroutine
+p
+  strong Display:
+  = @incarnation.display
+
+= link_to 'Edit', edit_incarnation_path(@incarnation)
+'|
+= link_to 'Back', incarnations_path

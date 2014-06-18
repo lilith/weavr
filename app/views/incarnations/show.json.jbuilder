@@ -1,0 +1,1 @@
+json.extract! @incarnation, :id, :profile_id, :type, :title, :name, :gender, :other_gender, :gold, :gems, :hitpoints, :max_hitpoints, :mana, :max_mana, :experience, :level, :turns, :location_id, :coroutine, :display, :created_at, :updated_at

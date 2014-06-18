@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :incarnations
+
   resources :profiles
 
   root :to => "home#index"

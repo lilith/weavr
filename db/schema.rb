@@ -11,10 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618095113) do
+ActiveRecord::Schema.define(version: 20140618095720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "incarnations", force: true do |t|
+    t.integer  "profile_id"
+    t.string   "type"
+    t.string   "title"
+    t.string   "name"
+    t.string   "gender"
+    t.string   "other_gender"
+    t.integer  "gold"
+    t.integer  "gems"
+    t.integer  "hitpoints"
+    t.integer  "max_hitpoints"
+    t.integer  "mana"
+    t.integer  "max_mana"
+    t.integer  "experience"
+    t.integer  "level"
+    t.integer  "turns"
+    t.integer  "location_id"
+    t.binary   "coroutine"
+    t.text     "display"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "incarnations", ["location_id"], name: "index_incarnations_on_location_id", using: :btree
+  add_index "incarnations", ["profile_id"], name: "index_incarnations_on_profile_id", using: :btree
 
   create_table "profiles", force: true do |t|
     t.integer  "user_id"

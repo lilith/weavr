@@ -1,0 +1,55 @@
+h1 Listing incarnations
+
+table
+  thead
+    tr
+      th Profile
+      th Type
+      th Title
+      th Name
+      th Gender
+      th Other gender
+      th Gold
+      th Gems
+      th Hitpoints
+      th Max hitpoints
+      th Mana
+      th Max mana
+      th Experience
+      th Level
+      th Turns
+      th Location
+      th Coroutine
+      th Display
+      th
+      th
+      th
+
+  tbody
+    - @incarnations.each do |incarnation|
+      tr
+        td = incarnation.profile
+        td = incarnation.type
+        td = incarnation.title
+        td = incarnation.name
+        td = incarnation.gender
+        td = incarnation.other_gender
+        td = incarnation.gold
+        td = incarnation.gems
+        td = incarnation.hitpoints
+        td = incarnation.max_hitpoints
+        td = incarnation.mana
+        td = incarnation.max_mana
+        td = incarnation.experience
+        td = incarnation.level
+        td = incarnation.turns
+        td = incarnation.location
+        td = incarnation.coroutine
+        td = incarnation.display
+        td = link_to 'Show', incarnation
+        td = link_to 'Edit', edit_incarnation_path(incarnation)
+        td = link_to 'Destroy', incarnation, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Incarnation', new_incarnation_path

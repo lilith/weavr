@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile_id: 
+  type: 
+  title: MyString
+  name: MyString
+  gender: MyString
+  other_gender: MyString
+  gold: 1
+  gems: 1
+  hitpoints: 1
+  max_hitpoints: 1
+  mana: 1
+  max_mana: 1
+  experience: 1
+  level: 1
+  turns: 1
+  location_id: 
+  coroutine: 
+  display: MyText
+
+two:
+  profile_id: 
+  type: 
+  title: MyString
+  name: MyString
+  gender: MyString
+  other_gender: MyString
+  gold: 1
+  gems: 1
+  hitpoints: 1
+  max_hitpoints: 1
+  mana: 1
+  max_mana: 1
+  experience: 1
+  level: 1
+  turns: 1
+  location_id: 
+  coroutine: 
+  display: MyText

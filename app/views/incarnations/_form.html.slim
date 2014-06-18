@@ -1,0 +1,25 @@
+= simple_form_for(@incarnation) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :profile
+    = f.input :type
+    = f.input :title
+    = f.input :name
+    = f.input :gender
+    = f.input :other_gender
+    = f.input :gold
+    = f.input :gems
+    = f.input :hitpoints
+    = f.input :max_hitpoints
+    = f.input :mana
+    = f.input :max_mana
+    = f.input :experience
+    = f.input :level
+    = f.input :turns
+    = f.association :location
+    = f.input :coroutine
+    = f.input :display
+
+  .form-actions
+    = f.button :submit
