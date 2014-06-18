@@ -1,3 +1,134 @@
+User
+- birthdate
+
+
+Profile
+- User
+- Name
+- Incarnations
+
+Incarnation
+- type
+- Profile
+- World?
+- gender
+- othergender
+- Gold (int)
+- Gems (int)
+- Hitpoints (int)
+- MaxHitpoints
+- Mana (int)
+- MaxMana
+- Experience (int)
+- Level (int)
+- Title
+- turns (int)
+- Location
+- Coroutine
+- Display
+
+
+Dwelling
+- owner(profile)
+- name
+- etc
+
+
+DwellingKeys
+- dwelling
+- user
+
+
+Module
+- pid
+- name
+- title
+- description
+- parent (module)
+- creator (profile)
+- locations
+- hooks
+- handlers
+- dependencies
+
+
+ModulePreferences
+- module
+- prefs
+
+Location
+- module
+- hooks
+- text
+- code
+- choices
+
+Hooks
+- type (choice, beforeload, afterload, event)
+- name
+- module
+
+Handlers
+- module
+- hook
+- code
+- location
+- priority
+
+We later hash every version of a serialized module to implement versioning.
+
+Suggest edit vs edit. Textonly change vs code.
+Permissions are (module | moduletree | hook) + permission + (role/user)
+
+permissions - owner, coder, writer,  player
+
+
+Tests run at two levels - module level, and world level
+
+
+WorldVersion
+- worldhash
+- modulecommits
+
+WorldTestResults
+- worldhash
+- errors
+- result
+
+
+WorldVersionBranches
+- branchname
+- worldhash
+
+When tests pass on 
+
+
+
+ModuleSet
+
+ModuleTestResults
+- modulehash
+- errors
+- success
+
+ModuleCommits
+- modulepid
+- hash
+- message
+- author
+- datetime
+- parents
+- modulehash
+
+ModuleVersions
+- hash
+- contents
+
+
+
+
+
+
 Weavr
 =========
 
