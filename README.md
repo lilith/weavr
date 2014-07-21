@@ -84,7 +84,7 @@ Hooks
 - name
 - type (beforeload, afterload, event)
 
-rails generate scaffold Hooks mod:belongs_to location:references  name:string type:string
+rails generate scaffold Handler mod:belongs_to hook:belongs_to code:text priority:float
 
 Handlers
 - mod
@@ -92,6 +92,13 @@ Handlers
 - code
 - priority
 
+
+rails generate migration add_current_incarnation_to_profile current_incarnation:belongs_to
+
+rails g migration rename_incarnation_type_to_kind
+
+
+rails g migration rename_hook_type_to_kind
 
 
 

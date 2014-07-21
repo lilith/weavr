@@ -1,2 +1,16 @@
-h1 Play#index
-p Find me in app/views/play/index.html.slim
+li
+  - @choices.each do |c|
+    li
+      a href="/play/choose/#{c.id}" c.title
+
+== @output
+
+
+table
+  - @stats.each do |stat|
+    tr
+      td
+        stat[:name]
+      td
+        stat[:value]
+      

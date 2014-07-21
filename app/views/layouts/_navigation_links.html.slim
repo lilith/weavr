@@ -1,3 +1,10 @@
+
+- if current_profile
+  li
+    == link_to current_profile.name, profile_path(current_profile)
+- else
+  li
+    == link_to  'Select Profile', '/select_profile'
 - if user_signed_in?
   li 
     == link_to 'Sign out', signout_path

@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
 
+  has_many :profiles
+
+  belongs_to :last_profile, class_name:"Profile"
+
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth['provider']

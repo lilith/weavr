@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'select_profile/index'
+  get 'select_profile' => 'select_profile#index'
 
-  get 'select_profile/update'
+  get 'select_profile/activate/:id' => 'select_profile#activate'
 
-  get 'play/index'
+  get 'play' => 'play#index'
 
   get 'play/update'
 

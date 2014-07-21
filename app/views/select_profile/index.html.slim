@@ -1,2 +1,11 @@
-h1 SelectProfile#index
-p Find me in app/views/select_profile/index.html.slim
+h1 Select a profile
+
+
+ul
+  - @profiles.each do |p|
+    li
+      = link_to p.name, "/select_profile/activate/#{p.id}"
+
+br
+
+= link_to 'New Profile', new_profile_path
