@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618123001) do
+ActiveRecord::Schema.define(version: 20140721145116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,14 +44,12 @@ ActiveRecord::Schema.define(version: 20140618123001) do
 
   create_table "hooks", force: true do |t|
     t.integer  "mod_id"
-    t.integer  "location_id"
     t.string   "name"
     t.string   "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "hooks", ["location_id"], name: "index_hooks_on_location_id", using: :btree
   add_index "hooks", ["mod_id"], name: "index_hooks_on_mod_id", using: :btree
 
   create_table "incarnations", force: true do |t|
@@ -70,29 +68,13 @@ ActiveRecord::Schema.define(version: 20140618123001) do
     t.integer  "experience"
     t.integer  "level"
     t.integer  "turns"
-    t.integer  "location_id"
     t.binary   "coroutine"
     t.text     "display"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "incarnations", ["location_id"], name: "index_incarnations_on_location_id", using: :btree
   add_index "incarnations", ["profile_id"], name: "index_incarnations_on_profile_id", using: :btree
-
-  create_table "locations", force: true do |t|
-    t.integer  "mod_id"
-    t.string   "name"
-    t.text     "title"
-    t.text     "text"
-    t.text     "choices"
-    t.boolean  "choices_expandable"
-    t.text     "code"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "locations", ["mod_id"], name: "index_locations_on_mod_id", using: :btree
 
   create_table "mods", force: true do |t|
     t.uuid     "pid"
@@ -103,6 +85,8 @@ ActiveRecord::Schema.define(version: 20140618123001) do
     t.integer  "creator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "prose"
+    t.text     "code"
   end
 
   add_index "mods", ["creator_id"], name: "index_mods_on_creator_id", using: :btree
