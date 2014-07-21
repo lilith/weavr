@@ -1,16 +1,23 @@
-li
-  - @choices.each do |c|
-    li
-      a href="/play/choose/#{c.id}" c.title
+- @output.each do |line|
+  p 
+    == line
 
-== @output
+p
+  | What would you like to do?
 
+- @choices.each do |c|
+  li
+    a href="/play/choose/#{c[:id]}" 
+      ==c[:label]
 
-table
-  - @stats.each do |stat|
-    tr
-      td
-        stat[:name]
-      td
-        stat[:value]
+.stats_table
+  table
+    - @stats.each do |stat|
+      tr
+        td
+          == stat[:name]
+        td
+          == stat[:value]
+
+/Eventually convert the "What would you like do do?" question into a reference to the yml file
       
