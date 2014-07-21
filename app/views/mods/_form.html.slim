@@ -1,13 +1,55 @@
 = simple_form_for(@mod) do |f|
   = f.error_notification
-
-  .form-inputs
-    / = f.input :pid
-    = f.association :parent
-    = f.input :name
-    = f.input :title
-    = f.input :description
-    = f.association :creator
-
   .form-actions
     = f.button :submit
+  ul.nav.nav-tabs role="tablist"
+    li.active
+      a href="#basic_info" role="tab" data-toggle="tab" Basic Information
+    li
+      a href="#prose" role="tab" data-toggle="tab" Prose
+    li
+      a href="#code" role="tab" data-toggle="tab" Code
+
+  .form-inputs
+    .tab-content
+      #basic_info.tab-pane.active
+        = f.association :parent
+        = f.input :name
+        = f.input :title
+        = f.input :description
+        = f.association :creator
+      #prose.tab-pane
+        = f.input :prose
+      #code.tab-pane 
+        pre#editor style="min-height:300px;"
+          == @mod.code
+        textarea id="mod_code" name="mod[code]" style="display: none;"
+          == @mod.code
+
+
+  
+/ = f.input :pid
+
+
+  
+script src="/assets/ace/ace.js"
+
+javascript:
+  var editor = ace.edit("editor");
+  editor.setTheme("ace/theme/monokai");
+  editor.getSession().setMode("ace/mode/lua");
+
+  function adaptEditor() {
+    container = document.getElementById('editor')
+    container.style.height = window.innerHeight - container.getBoundingClientRect().top - 200 + 'px';
+    editor.resize(true);
+  }
+  window.onresize = function(event) {
+      adaptEditor();
+  };
+  adaptEditor();
+  var textarea = $('#mod_code').hide();
+  editor.getSession().setValue(textarea.val());
+  editor.getSession().on('change', function(){
+    textarea.val(editor.getSession().getValue());
+  });
