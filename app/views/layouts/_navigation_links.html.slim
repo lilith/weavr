@@ -5,6 +5,8 @@
 - else
   li
     == link_to  'Select Profile', '/select_profile'
+li
+  == link_to 'Mods', '/mods'
 - if user_signed_in?
   li 
     == link_to 'Sign out', signout_path
