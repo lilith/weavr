@@ -4,5 +4,57 @@
 
 
 .stats_table {
-  font-size: 30px !important;
+}
+.stats{
+  padding: 10px;
+}
+
+.stat_bar {
+  background-color: black;
+  border-radius: 13px; /* (height of inner div) / 2 + padding */
+  padding: 3px;
+  height: 15px;
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+.stat_bar > div {
+   background-color: #68DB37;
+   /* Adjust with JavaScript */
+   height: 9px;
+   border-radius: 10px;
+}
+
+#stat_health > div
+{
+  background-color: #ED2431;
+}
+
+.personal_info {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  border:1px solid #ccc;
+}
+.running_text {
+    background-color: black;
+    color: white;
+    border:1px solid #ccc;
+}
+
+.affix {
+  top: 0px;
+  width:100%;
+}
+
+.navbar-form {
+   padding-left: 0;
+}
+
+.navbar-collapse{
+   padding-left:0; 
+}
+
+.no-bottom{
+    margin-bottom: 0px;
 }
