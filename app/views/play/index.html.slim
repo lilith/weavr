@@ -1,11 +1,5 @@
 /Figure out how to offset the instructions
 .container.row
-  - @stats.each do |stat|
-    .stat_bar id="stat_#{stat[:name]}"
-      - percent = stat[:value].to_f / stat[:max].to_f * 100 
-      div style="width:#{percent}%"
-        == stat[:name] 
-.container.row
   .col-md-9.personal_info
     .instructions
       - if @response[:error]

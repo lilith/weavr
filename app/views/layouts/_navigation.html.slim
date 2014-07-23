@@ -11,11 +11,18 @@ nav.navbar.navbar-inverse.navbar-static-top.no-bottom
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         == render 'layouts/navigation_links'
-nav.navbar.navbar-default.navbar-lower
-  .container-fluid
-      p
-        |Test
-javascript:
-  $('.navbar-lower').affix({
-    offset: {top: 50}
-  });
+- if @stats 
+  nav.navbar.navbar-default.navbar-lower.no-bottom
+    .container-fluid.row
+      .col-md-4
+          .row
+            - @stats.each do |stat|
+              .col-sm-3
+                == stat[:name] 
+                .stat_bar id="stat_#{stat[:name]}"
+                  - percent = stat[:value].to_f / stat[:max].to_f * 100 
+                  div style="width:#{percent}%"
+  javascript:
+    $('.navbar-lower').affix({
+      offset: {top: 50}
+    });

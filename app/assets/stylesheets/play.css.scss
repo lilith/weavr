@@ -14,12 +14,11 @@
   border-radius: 13px; /* (height of inner div) / 2 + padding */
   padding: 3px;
   height: 15px;
-  width: 60%;
   margin-bottom: 10px;
 }
 
 .stat_bar > div {
-   background-color: #68DB37;
+   background-color: #ED2431;
    /* Adjust with JavaScript */
    height: 9px;
    border-radius: 10px;
@@ -27,7 +26,7 @@
 
 #stat_health > div
 {
-  background-color: #ED2431;
+  background-color: #68DB37;
 }
 
 .personal_info {
