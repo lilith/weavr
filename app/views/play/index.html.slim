@@ -18,10 +18,11 @@
   .col-md-3
     p
       | What would you like to do?
-    - @choices.each do |c|
-      li
-        a href="/play/choose/#{c[:id]}" 
-          ==c[:label]
+
+    = form_tag("/play", method: "post") do
+      - @choices.each do |c|
+        button.btn.btn-primary type="submit" name="#{c[:id]}"
+          == c[:label]
 
 
 

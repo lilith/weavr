@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'select_profile/activate/:id' => 'select_profile#activate'
 
   get 'play' => 'play#index'
+  post 'play' => 'play#index'
 
   get 'play/update'
 

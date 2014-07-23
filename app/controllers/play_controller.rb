@@ -21,15 +21,13 @@ class PlayController < ApplicationController
     #@stats = [{name: :hitpoints, max: 10, value: 3}, {name: :health, max: 10, value: 5}]
     #@output = ["A paragraph.", "paragraph 2"]
     #@choices = [{id: "choice_id", label: "Choice Label"}]
-	@stats = [{name: :hitpoints, max: 10, value: 3}, {name: :health, max: 10, value: 5}]
+	 @stats = [{name: :hitpoints, max: 10, value: 3}, {name: :health, max: 10, value: 5}]
     
   end
 
   def update
+    index
   end
 
-  def play 
-
-  end
 
 end
