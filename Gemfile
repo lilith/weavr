@@ -17,7 +17,8 @@ gem 'pg'
 gem 'pundit'
 gem 'simple_form'
 gem 'slim-rails'
-gem 'rufus-lua'
+gem 'rufus-lua', :path => "../rufus-lua"
+gem 'weaver_engine', :path => "../weaver_engine"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]
