@@ -1,17 +1,35 @@
 class PlayController < ApplicationController
   def index
+    
     incarnate!
 
     i = current_profile.active_incarnation
+
+    @branch_id = "master"
+    @user_id = current_profile.id
+
+    @data = WeaverEngine::FsysDataAdapter.new(@user_id,@branch_id, "tmp/data", "db/lua")
+    @display = WeaverEngine::HtmlDisplayAdapter.new(@data)
+    @engine = WeaverEngine::Engine.new(@user_id, @branch_id, @data, @display)
+
+    @stats = @display.stats
+
+    @response = @engine.request(params)
+
+    @output = @display.prose
+    @choices = @display.choices
+    #@stats = [{name: :hitpoints, max: 10, value: 3}, {name: :health, max: 10, value: 5}]
+    #@output = ["A paragraph.", "paragraph 2"]
+    #@choices = [{id: "choice_id", label: "Choice Label"}]
+	@stats = [{name: :hitpoints, max: 10, value: 3}, {name: :health, max: 10, value: 5}]
     
-    @stats = [{name: :hitpoints, max: 10, value: 3}, {name: :health, max: 10, value: 5}]
-    @output = ["This is a nice long paragraph of things that are going on. This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.This is a nice long paragraph of things that are going on.his is a nice long paragraph of things that are going on. his is a nice long paragraph of things that are going on. his is a nice long paragraph of things that are going on. his is a nice long paragraph of things that are going on.", "This contains the information you need to know to proceed, and gives an option."]
-    @choices = [{id: "choice_id", label: "Choice Label"}, {id: "choice_id", label: "Another choice"}]
-    @barwidth = 30 #@stats[0][:value].to_f / @stats[0][:max].to_f * 100
-
-
   end
 
   def update
   end
+
+  def play 
+
+  end
+
 end
