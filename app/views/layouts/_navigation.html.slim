@@ -11,12 +11,11 @@ nav.navbar.navbar-inverse.navbar-static-top.no-bottom
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         == render 'layouts/navigation_links'
-nav.navbar.navbar-default.navbar-lower 
-  .container
-    .collapse.navbar-collapse.collapse-buttons
+nav.navbar.navbar-default.navbar-lower
+  .container-fluid
       p
         |Test
 javascript:
   $('.navbar-lower').affix({
-  offset: {top: 0}
+    offset: {top: 50}
   });
