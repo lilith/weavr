@@ -1,23 +1,25 @@
-- @output.each do |line|
-  p 
-    == line
+/Figure out how to offset the instructions
+.container.row
+  - @stats.each do |stat|
+    .stat_bar id="stat_#{stat[:name]}"
+      - percent = stat[:value].to_f / stat[:max].to_f * 100 
+      div style="width:#{percent}%"
+        == stat[:name] 
+.container.row
+  .col-md-9.personal_info
+    .instructions
+      - @output.each do |line|
+        p 
+          == line
+  .col-md-3
+    p
+      | What would you like to do?
+    - @choices.each do |c|
+      li
+        a href="/play/choose/#{c[:id]}" 
+          ==c[:label]
 
-p
-  | What would you like to do?
 
-- @choices.each do |c|
-  li
-    a href="/play/choose/#{c[:id]}" 
-      ==c[:label]
-
-.stats_table
-  table
-    - @stats.each do |stat|
-      tr
-        td
-          == stat[:name]
-        td
-          == stat[:value]
 
 /Eventually convert the "What would you like do do?" question into a reference to the yml file
-      
+/Tie this to statsbar.js as soon as the stats are sorted out.
