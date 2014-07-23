@@ -8,9 +8,13 @@
 .container.row
   .col-md-9.personal_info
     .instructions
-      - @output.each do |line|
-        p 
-          == line
+      - if @response[:error]
+        pre
+          == @response[:error]
+      - else
+        - @output.each do |line|
+          p 
+            == line
   .col-md-3
     p
       | What would you like to do?
