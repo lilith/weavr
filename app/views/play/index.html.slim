@@ -15,8 +15,11 @@
 
     = form_tag("/play", method: "post") do
       - @choices.each do |c|
-        button.btn.btn-primary type="submit" name="#{c[:id]}"
+        button.btn.btn-primary type="submit" name="#{c[:safe_id]}"
           == c[:label]
+    = form_tag("/reset", method: "post") do
+      button.btn.btn-primary type="submit"
+        | Delete game state
 
 
 

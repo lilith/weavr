@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'play' => 'play#index'
   post 'play' => 'play#index'
 
+  post 'reset' => 'play#reset'
+  get 'reset' => 'play#reset'
+
   get 'play/update'
 
   resources :handlers

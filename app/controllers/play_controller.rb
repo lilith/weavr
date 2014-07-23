@@ -14,20 +14,28 @@ class PlayController < ApplicationController
 
     @stats = @display.stats
 
-    @response = @engine.request(params)
+    @response = @engine.request(request.post? ? params : nil)
 
     @output = @display.prose
     @choices = @display.choices
     #@stats = [{name: :hitpoints, max: 10, value: 3}, {name: :health, max: 10, value: 5}]
     #@output = ["A paragraph.", "paragraph 2"]
     #@choices = [{id: "choice_id", label: "Choice Label"}]
-	 @stats = [{name: :hitpoints, max: 10, value: 3}, {name: :health, max: 10, value: 5}]
+	   @stats = [{name: :hitpoints, max: 10, value: 3}, {name: :health, max: 10, value: 5}]
     
   end
 
   def update
     index
   end
+
+  def reset
+    require 'fileutils'
+
+    FileUtils.rm_rf('tmp/data')
+
+    redirect_to '/play'
+  end 
 
 
 end
