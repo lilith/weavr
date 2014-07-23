@@ -19,5 +19,12 @@ module Weavr
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    #config.eager_load_paths += [File.expand_path("#{Rails.root}/../weaver_engine/lib}")] 
+    #config.cache_classes = false
+
+    #["WeaverEngine", "WeaverEngine::FsysDataAdapter"].each do |name|
+    #  ActiveSupport::Dependencies.explicitly_unloadable_constants << name
+    #end
   end
 end
