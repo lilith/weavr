@@ -1,30 +1,30 @@
 h1 Listing mods
-
-table
-  thead
-    tr
-      th Pid
-      th Parent
-      th Name
-      th Title
-      th Description
-      th Creator
-      th
-      th
-      th
-
-  tbody
-    - @mods.each do |mod|
+.mods-table
+  table
+    thead
       tr
-        td = mod.pid
-        td = mod.parent
-        td = mod.name
-        td = mod.title
-        td = mod.description
-        td = mod.creator
-        td = link_to 'Show', mod
-        td = link_to 'Edit', edit_mod_path(mod)
-        td = link_to 'Destroy', mod, data: {:confirm => 'Are you sure?'}, :method => :delete
+        th Pid
+        th Parent
+        th Name
+        th Title
+        th Description
+        th Creator
+        th
+        th
+        th
+
+    tbody style="background-color: white;"
+      - @mods.each do |mod|
+        tr
+          td = mod.pid
+          td = mod.parent
+          td = mod.name
+          td = mod.title
+          td = mod.description
+          td = mod.creator
+          td = link_to 'Show', mod
+          td = link_to 'Edit', edit_mod_path(mod)
+          td = link_to 'Destroy', mod, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
