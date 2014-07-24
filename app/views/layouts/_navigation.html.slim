@@ -14,14 +14,13 @@ nav.navbar.navbar-inverse.navbar-static-top.no-bottom
 - if @stats 
   nav.navbar.navbar-default.navbar-lower.no-bottom
     .container-fluid.row
-      .col-md-4
-          .row
-            - @stats.each do |stat|
-              .col-sm-3
-                == stat[:name] 
-                .stat_bar id="stat_#{stat[:name]}"
-                  - percent = stat[:value].to_f / stat[:max].to_f * 100 
-                  div style="width:#{percent}%"
+      .row
+        - @stats.each do |stat|
+          .col-sm-3
+            == stat[:name] 
+            .stat_bar id="stat_#{stat[:name]}"
+              - percent = stat[:value].to_f / stat[:max].to_f * 100 
+              div style="width:#{percent}%"
   javascript:
     $('.navbar-lower').affix({
       offset: {top: 50}
