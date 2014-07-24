@@ -1,7 +1,6 @@
 = simple_form_for(@mod) do |f|
   = f.error_notification
   .form-actions
-    = f.button :submit
   ul.nav.nav-tabs role="tablist"
     li.active
       a href="#basic_info" role="tab" data-toggle="tab" Basic Information
@@ -16,15 +15,19 @@
         = f.association :parent
         = f.input :name
         = f.input :title
-        = f.input :description
+        label.text.optional.control-label for="mod_description"  Description
+        br
+        textarea#mod_description.text.optional name="mod[description]" style="width:200px; height: 150px;"
         = f.association :creator
       #prose.tab-pane
-        = f.input :prose
+        textarea#mod_prose.text.optional name="mod[prose]" style="width: 80%; height:300px;"
+          == @mod.prose
       #code.tab-pane 
         pre#editor style="min-height:300px;"
           == @mod.code
         textarea id="mod_code" name="mod[code]" style="display: none;"
           == @mod.code
+  input.btn name="commit" type="submit" value="Update Mod" style="margin-top: 5px; margin-bottom: 5px;"
 
 
   
